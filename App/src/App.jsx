@@ -1,43 +1,47 @@
 import { useState } from 'react'
 import logo from './logo.svg'
 import './App.css'
+import DataLoading from "./components/DataLoading";
+import CustomHook from "./components/CustomHook";
+import BruteForce from "./components/BruteForce";
 
 function App() {
   const [count, setCount] = useState(0)
+  const [color, setColor] = useState('blue')
+  
+  const changeColorClick = () => {
+      if (color === 'blue') {
+        return setColor('green');
+      }
+      return setColor('blue');
+  }
 
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
+
         <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
+          <button
+              style={{
+                display: 'block',
+                margin: '10px auto',
+                padding: '15px 30px',
+                  borderRadius: '10px',
+                backgroundColor: color,
+                color: 'white',
+              }}
+              type="button" onClick={() => {
+            changeColorClick();
+            setCount(count + 1);
+          }}>
             count is: {count}
           </button>
         </p>
-        <p>
-          Edit <code>App.jsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
       </header>
+        <CustomHook/>
+        <DataLoading/>
+        <BruteForce email=''/>{/*У меня нету юзера на нашем ресурсе*/}
     </div>
   )
 }

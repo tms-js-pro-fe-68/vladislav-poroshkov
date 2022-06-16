@@ -40,3 +40,29 @@
 button {
   font-size: calc(10px + 2vmin);
 }
+
+.div_cocktails {
+  border:5px solid teal;
+  margin: 100px auto;
+  width: 500px;
+  padding: 40px;
+  border-radius: 20px;
+}
+
+.h2_cocktails {
+  text-align: center;
+  font-size: 30px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: teal;
+}
+
+.li_cocktails {
+  font-size: 20px;
+  font-weight: bold;
+  color: teal ;
+}
+
+i {
+  font-style: normal;
+}
+
